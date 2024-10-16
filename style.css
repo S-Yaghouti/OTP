@@ -1,0 +1,175 @@
+/* ================================================================ >> Imports << */
+
+/* ================================================================ >> Imports << */
+
+/* ================================================================== >> Basic << */
+
+/* ------------------------------------------------------- >> * << */
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+/* ------------------------------------------------------- >> * << */
+
+/* -------------------------------------------- >> scroll style << */
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0);
+}
+
+/* -------------------------------------------- >> scroll style << */
+
+/* ---------------------------------------------------- >> root << */
+:root {
+    --black: #282828;
+    --deep-blue: #000B98;
+}
+
+/* ---------------------------------------------------- >> root << */
+
+/* ---------------------------------------------- >> All Father << */
+html,
+body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    font-family: 'Comic Sans MS';
+    overflow: hidden;
+}
+
+/* ---------------------------------------------- >> All Father << */
+
+/* ================================================================== >> Basic << */
+
+/* ================================================================ >> Layer 1 << */
+.Layer1 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    z-index: 0;
+}
+
+/* ------------------------------------------------- >> Body <<  */
+#BG_1 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: var(--black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(1rem, 1.5vw, 3rem);
+}
+
+/* ------------------------------------------------- >> Body <<  */
+
+/* --------------------------------------------------- >> OTP << */
+
+/* ----------------------------------- > OTP Text < */
+.OTP_Text {
+    color: white;
+    font-size: clamp(1rem, 1.5vw, 3rem);
+}
+
+/* ----------------------------------- > OTP Text < */
+
+/* ------------------------------ > OTP Container < */
+.OTP_Container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s;
+}
+
+.OTP_Container.loading {
+    pointer-events: none;
+    transition: all 0.5s;
+    scale: 0.5;
+    opacity: 0.5;
+}
+
+/* ------------------------------ > OTP Container < */
+
+/* ---------------------------------- > OTP Feild < */
+.OTP_Feild {
+    width: clamp(3rem, 4vw, 12rem);
+    height: clamp(3rem, 4vw, 12rem);
+    margin: 0px 5px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background-color: white;
+    caret-color: var(--black);
+    color: var(--black);
+    transition: all 0.5s;
+    font-size: clamp(1rem, 1.5vw, 3rem);
+}
+
+.OTP_Feild.check {
+    caret-color: white;
+    transition: all 0.5s;
+    background-color: green;
+    color: white;
+}
+
+.OTP_Feild.error {
+    caret-color: white;
+    color: white;
+    transition: all 0.5s;
+    background-color: red;
+}
+
+/* ---------------------------------- > OTP Feild < */
+
+/* --------------------------------------------------- >> OTP << */
+
+/* ================================================================ >> Layer 1 << */
+
+/* ============================================================ >> Media Query << */
+
+/* ------------------------------------------------ >> 4K << */
+@media screen and (min-width: 1800px) {}
+
+/* ------------------------------------------------ >> 4K << */
+
+/* ------------------------------------------ >> L Laptop << */
+@media screen and (max-width: 1440px) {}
+
+/* ------------------------------------------ >> L Laptop << */
+
+/* ------------------------------------------ >> S Laptop << */
+@media screen and (max-width: 1024px) {}
+
+/* ------------------------------------------ >> S Laptop << */
+
+/* -------------------------------------------- >> tablet << */
+@media screen and (max-width: 768px) {}
+
+/* -------------------------------------------- >> tablet << */
+
+/* ------------------------------------------ >> L mobile << */
+@media screen and (max-width: 425px) {}
+
+/* ------------------------------------------ >> L mobile << */
+
+/* ------------------------------------------ >> S mobile << */
+@media screen and (max-width: 320px) {}
+
+/* ------------------------------------------ >> S mobile << */
+
+/* ============================================================ >> Media Query << */
