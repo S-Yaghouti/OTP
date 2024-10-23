@@ -1,6 +1,6 @@
-// 
+//
 // ============= >> All icons are sourced from the Iconify website << ==============
-// 
+//
 // =================================================================== >> improts <<
 import { OTP } from "./OTP/otp.js";
 // =================================================================== >> improts <<
@@ -21,7 +21,7 @@ const BG_1 = document.querySelector("#BG_1");
 const OTP_Text = document.createElement("span");
 OTP_Text.classList.add("OTP_Text");
 
-OTP_Text.textContent = "enter code";
+OTP_Text.textContent = "Enter code";
 
 BG_1.appendChild(OTP_Text);
 // ------------------------------------------ > Title Text <
@@ -30,7 +30,7 @@ BG_1.appendChild(OTP_Text);
 //
 const Inputcount = 6; // you can change as you like
 //
-const CodeVerifiaction = OTP(Inputcount, otpSubmit);
+const CodeVerifiaction = OTP(Inputcount);
 //
 // -------------------------------------------- > CallBack <
 //
@@ -38,30 +38,26 @@ const CodeVerifiaction = OTP(Inputcount, otpSubmit);
 BG_1.appendChild(CodeVerifiaction);
 // ----------------------------------------- > Appendchild <
 //
-// ------------------------- Selector >
+// -------------------------------------------- > Selector <
 const inputs = document.querySelectorAll(".OTP_Feild");
-// ------------------------- Selector <
+// -------------------------------------------- > Selector <
 //
-// ------------- OTP Function Manager >
+// -------------------------------- > OTP Function Manager <
 inputs.forEach((input, index) => {
   //
   // Set Index For Inputs >>
   input.dataset.index = index;
   // Set Index For Inputs <<
   //
-  // Paste Listner >>
-  input.addEventListener("paste", handleOtpPaste);
-  // Paste Listner <<
-  //
   // Keyup Listner >>
-  input.addEventListener("keyup", handleOtp);
+  input.addEventListener("keyup", ManageEnteredCode);
   // Keyup Listner >>
   //
 });
-// ------------- OTP Function Manager <
+// -------------------------------- > OTP Function Manager <
 //
-// ----------------------- Handle otp >
-function handleOtp(e) {
+// ------------------------------------------ > Handle otp <
+function ManageEnteredCode(e) {
   //
   // Identify the Target Input Field >>
   let input = e.target;
@@ -99,44 +95,18 @@ function handleOtp(e) {
   }
   // Submit OTP <<
 }
-// ----------------------- Handle otp <
+// ------------------------------------------ > Handle otp <
 //
-// ------------------------ Paste OTP >
-function handleOtpPaste(e) {
-  //
-  // Get the Stored Text >>
-  const data = e.clipboardData.getData("text");
-  // Get the Stored Text <<
-  //
-  // Split to Characters >>
-  const value = data.split("");
-  // Split to Characters <<
-  //
-  // Check the Length >>
-  if (value.length === inputs.length) {
-    //
-    // Fill The Feilds With Value >
-    inputs.forEach((input, index) => (input.value = value[index]));
-    // Fill The Feilds With Value >
-    //
-    // OTP Submit >
-    otpSubmit();
-    // OTP Submit <
-  }
-  // Check the Length >>
-}
-// ------------------------ Paste OTP <
-//
-// ----------------------- OTP Submit >
+// ------------------------------------------ > OTP Submit <
 let IsValid = false;
 //
 function otpSubmit() {
   //
   // Clear Inputs Classes >>
   inputs.forEach((input) => {
-    input.blur();
-    input.classList.remove("check");
-    input.classList.remove("error");
+    input.blur(); // Remove fucos of inputs
+    input.classList.remove("check"); // Clear check OTP inputs class
+    input.classList.remove("error"); // Clear error OTP inputs class
   });
   // Clear Inputs Classes <<
   //
@@ -176,6 +146,19 @@ function otpSubmit() {
     }, 2000);
     // Add timeout <
     //
+    // undo <
+    setTimeout(() => {
+      //
+      // add check to inputs >
+      inputs.forEach((input) => {
+        input.classList.remove("error");
+        input.classList.remove("check");
+      });
+      // add check to inputs <
+      //
+    }, 4000);
+    // undo <
+    //
   }
   // Valid >>
   //
@@ -198,11 +181,24 @@ function otpSubmit() {
     }, 2000);
     // Add timeout <
     //
+    // undo <
+    setTimeout(() => {
+      //
+      // add check to inputs >
+      inputs.forEach((input) => {
+        input.classList.remove("error");
+        input.classList.remove("check");
+      });
+      // add check to inputs <
+      //
+    }, 4000);
+    // undo <
+    //
   }
   // Error <<
   //
 }
-// ----------------------- OTP Submit <
+// ------------------------------------------ > OTP Submit <
 //
 // --------------------------------------------------------- >> OTP <<
 //
