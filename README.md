@@ -2,9 +2,7 @@
 
 A lightweight, reusable OTP (One-Time Password) input component designed to enhance user experience in applications requiring secure authentication. This component generates a customizable container with individual input fields, allowing users to enter a multi-digit OTP efficiently.
 
-<div  style="margin: 0px auto;" >
-  <img src="./assets/preview.gif" alt="OTP preview" style="display: block; margin: 50px auto;">
-</div>
+<img src="./assets/preview.gif" alt="OTP preview" style="display: block; margin: 50px auto;">
 
 ## Table of Contents
 
