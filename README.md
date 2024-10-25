@@ -24,7 +24,7 @@ A lightweight, reusable OTP (One-Time Password) input component designed to enha
 
 ### To integrate the button component into your project, follow these steps:
 
-1. **Download the Files**: Clone or download the repository to your local machine.\*\*
+1. **Download the Files**: Clone or download the repository to your local machine.
 2. **Serve the `index.html` File**: To view the component in action, you’ll need to run a local server. Here are a few options:
 
    - **Using Live Server**: If you're using Visual Studio Code, you can install the [Live Server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer). Simply open the `index.html` file and click on "Open with Live Server."
